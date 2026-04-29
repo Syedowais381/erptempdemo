@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F8F8F8;
+  --color-foreground: #09090B;
+  
+  --color-primary: #6366F1;
+  --color-primary-foreground: #ffffff;
+  
+  --color-sidebar: #0A0A0A;
+  --color-sidebar-foreground: #A1A1AA;
+  --color-sidebar-active: #1A1A1A;
+  --color-sidebar-active-foreground: #ffffff;
+  
+  --color-card: #ffffff;
+  --color-card-foreground: #09090B;
+  
+  --color-muted: #71717A;
+  --color-border: #E4E4E7;
+  
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  --color-chart-1: #6366F1;
+  --color-chart-2: #8B5CF6;
+  --color-chart-3: #06B6D4;
+  --color-chart-4: #10B981;
+
+  --font-sans: "Geist", sans-serif;
+  
+  --radius-xl: 12px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+@layer base {
+  body {
+    font-family: "Geist", sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-reveal {
+    animation: reveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-transition {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
